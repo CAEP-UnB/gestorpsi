@@ -56,18 +56,25 @@ def _access_check_by_occurrence(request, occurrence):
     return True
 
 @permission_required_with_403('schedule.schedule_list')
-def schedule_occurrence_listing(request, year = 1, month = 1, day = None,
+def schedule_occurrence_listing(request, place_id, year = 1, month = 1, day = None,
     template='schedule/schedule_events.html',
     **extra_context):
 
     occurrences = schedule_occurrences(request, year, month, day)
+
+    try:
+        place = Place.objects.get( pk=place_id )
+    except:
+        place = Place.objects.filter(place_type=1, organization=request.user.get_profile().org_active)[0]
 
     return render_to_response(
         template,
         dict(
             extra_context,
             occurrences=occurrences,
-            places = Place.objects.active().filter(organization=request.user.get_profile().org_active.id),
+            path = "events/",
+            places_list = Place.objects.active().filter(organization=request.user.get_profile().org_active.id),
+            place = place,
             services = Service.objects.active().filter(organization=request.user.get_profile().org_active.id),
             professionals = CareProfessional.objects.active(request.user.get_profile().org_active.id)
             ),
@@ -76,8 +83,8 @@ def schedule_occurrence_listing(request, year = 1, month = 1, day = None,
 
 
 @permission_required_with_403('schedule.schedule_list')
-def schedule_occurrence_listing_today(request, template='schedule/schedule_events.html'):
-    return schedule_occurrence_listing(request, datetime.now().strftime('%Y'), datetime.now().strftime('%m'), datetime.now().strftime('%d'))
+def schedule_occurrence_listing_today(request, place=None, template='schedule/schedule_events.html'):
+    return schedule_occurrence_listing(request, place, datetime.now().strftime('%Y'), datetime.now().strftime('%m'), datetime.now().strftime('%d'))
 
 def invalid_delta_time(start, end):
     if start >= end:
@@ -459,22 +466,41 @@ def schedule_index(request,
 
 
 
-def week_view(request,
+def week_view(request, place=None,
     year = datetime.now().strftime("%Y"),
     month = datetime.now().strftime("%m"),
     day = datetime.now().strftime("%d"), ):
 
-    return render_to_response('schedule/schedule_week.html',         dict(
-            places = Place.objects.active().filter(organization=request.user.get_profile().org_active.id),
+    place_id = place
+
+    if place_id == None:
+        place_id = Place.objects.filter(place_type=1, organization=request.user.get_profile().org_active)[0].id
+
+    try:
+        place = Place.objects.get( pk=place_id )
+    except:
+        place = Place.objects.filter(place_type=1, organization=request.user.get_profile().org_active)[0]
+
+    data = dict(
+            places_list = Place.objects.active().filter(organization=request.user.get_profile().org_active.id),
+            place = place,
+            path = 'week/',
             rooms = Room.objects.active().filter(place__organization=request.user.get_profile().org_active.id),
             services = Service.objects.active().filter(organization=request.user.get_profile().org_active.id),
             professionals = CareProfessional.objects.active_all(request.user.get_profile().org_active.id)
-            ), context_instance=RequestContext(request))
+        )
+
+    return render_to_response(
+        'schedule/schedule_week.html',
+        data,
+        context_instance=RequestContext(request))
 
 def week_view_table(request,
+    place_id,
     year = datetime.now().strftime("%Y"),
     month = datetime.now().strftime("%m"),
-    day = datetime.now().strftime("%d"), ):
+    day = datetime.now().strftime("%d"),
+    ):
 
     if not year or not month or not day:
         today = datetime.now()
@@ -486,13 +512,14 @@ def week_view_table(request,
     week = []
     occurrences = []
     occurrences_length = 0
+    place = place_id
 
     for i in range(7):
         occurrences_daily = []
         week_day = first_week_day+timedelta(i)
         week.append(week_day)
         groups = []
-        for s in schedule_occurrences(request, week_day.strftime('%Y'), week_day.strftime('%m'), week_day.strftime('%d')):
+        for s in schedule_occurrences(request, week_day.strftime('%Y'), week_day.strftime('%m'), week_day.strftime('%d'), place_id):
             if s.is_group():
                 if s.event.referral.group.pk not in groups:
                     occurrences_daily.append({
@@ -527,7 +554,7 @@ def today_occurrences(request):
 
 
 
-def schedule_occurrences(request, year = 1, month = 1, day = None):
+def schedule_occurrences(request, year = 1, month = 1, day = None, place_id = None):
     if day:
         date_start = datetime.strptime("%s%s%s" % (year, month, day),"%Y%m%d")
         date_end = date_start+timedelta(days=+1)
@@ -535,14 +562,26 @@ def schedule_occurrences(request, year = 1, month = 1, day = None):
         date_start = datetime.strptime("%s%s" % (year, month),"%Y%m")
         date_end = date_start+timedelta( days=calendar.monthrange(int(year), int(month))[1] + 0)
 
-    objs = ScheduleOccurrence.objects.filter(
-            start_time__gte=date_start,
-            start_time__lt=date_end,
-            event__referral__organization=request.user.get_profile().org_active.id
-            ).exclude(occurrenceconfirmation__presence = 4 # unmarked's
-            ).exclude(occurrenceconfirmation__presence = 5 # remarked
-            ).exclude(room__place__active = False # exclude not active places
-            ).exclude(room__active = False) # exclude not active rooms
+    if place_id == None:
+        objs = ScheduleOccurrence.objects.filter(
+                start_time__gte=date_start,
+                start_time__lt=date_end,
+                event__referral__organization=request.user.get_profile().org_active.id,
+                ).exclude(occurrenceconfirmation__presence = 4 # unmarked's
+                ).exclude(occurrenceconfirmation__presence = 5 # remarked
+                ).exclude(room__place__active = False # exclude not active places
+                ).exclude(room__active = False) # exclude not active rooms
+
+    else:
+        objs = ScheduleOccurrence.objects.filter(
+                start_time__gte=date_start,
+                start_time__lt=date_end,
+                event__referral__organization=request.user.get_profile().org_active.id,
+                room__place__id = place_id
+                ).exclude(occurrenceconfirmation__presence = 4 # unmarked's
+                ).exclude(occurrenceconfirmation__presence = 5 # remarked
+                ).exclude(room__place__active = False # exclude not active places
+                ).exclude(room__active = False) # exclude not active rooms
 
     return objs
 
