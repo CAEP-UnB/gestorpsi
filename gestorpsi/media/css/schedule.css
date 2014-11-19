@@ -235,6 +235,15 @@ div.sidebar_client_schedule {
 
 .margin_top_fix { margin-top: 45px; }
 
+#schedule_header {
+    position: relative;
+    margin-top: 0px;
+    width: 975px;
+    height: 125px;
+    background-color: white;
+    z-index: 0;
+}
+
 #schedule_week td {  background:#efefef; }
 #schedule_week td.weekly_occurrences  { vertical-align:top;height: 500px;}
 #schedule_week td div { margin-top:0px; border:1px solid white;}
