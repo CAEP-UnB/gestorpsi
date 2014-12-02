@@ -80,9 +80,14 @@ def schedule_occurrence_listing(request, year = 1, month = 1, day = None,
 
 
 @permission_required_with_403('schedule.schedule_list')
-def schedule_occurrence_listing_today(request, template='schedule/schedule_events.html'):
-    return schedule_occurrence_listing(request, datetime.now().strftime('%Y'), datetime.now().strftime('%m'), datetime.now().strftime('%d'))
+def schedule_occurrence_listing_today(request, place=None, template='schedule/schedule_events.html'):
+    return schedule_occurrence_listing(request, place, datetime.now().strftime('%Y'), datetime.now().strftime('%m'), datetime.now().strftime('%d'))
 
+def invalid_delta_time(start, end):
+    return start >= end
+
+def verify_client(referral):
+    return referral is not None
 
 @permission_required_with_403('schedule.schedule_write')
 def add_event(
