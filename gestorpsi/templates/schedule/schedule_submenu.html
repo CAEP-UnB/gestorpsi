@@ -1,4 +1,4 @@
-/**
+{% comment %}
 
 Copyright (C) 2008 GestorPsi
 
@@ -12,23 +12,13 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
-*/
+{% endcomment %}
 
-/**
- * verify mozilla user
- */
+{% load i18n %}
 
-$(document).ready(function(){
-  /**
-   * not chrome
-   */
-	var userAgent = navigator.userAgent.toLowerCase(); 
-	$.browser.chrome = /chrome/.test(navigator.userAgent.toLowerCase());
-	if($.browser.chrome)
-	{
-		$('div.login .ff_not_ok').hide();
-	}
-});
-
-
-
+<ul id="sub_schedule">
+    <li><a class="first {{ tab_daily_class }}" href="/schedule/">{% trans "daily" %}</a></li>
+    <li><a class="{{ tab_week_class }}" href="/schedule/week/">{% trans "Weekly" %}</a></li>
+    <li><a class="{{ tab_event_class }}" href="/schedule/events/">{% trans "events" %}</a></li>
+    <li><a class="{{ tab_settings_class }}" href="{% url schedule-settings %}">{% trans "Configura&ccedil;&atilde;o" %}</a></li>
+</ul>

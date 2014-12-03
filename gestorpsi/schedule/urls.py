@@ -18,30 +18,33 @@ from django.conf.urls.defaults import *
 from gestorpsi.authentication.views import login_check
 from gestorpsi.referral.forms import ReferralForm
 from gestorpsi.schedule.forms import ScheduleOccurrenceForm, ScheduleSingleOccurrenceForm, OccurrenceConfirmationForm
-from gestorpsi.schedule.views import occurrence_view
-from gestorpsi.schedule.views import add_event
-from gestorpsi.schedule.views import schedule_index
-from gestorpsi.schedule.views import schedule_occurrence_listing_today
-from gestorpsi.schedule.views import event_view
-from gestorpsi.schedule.views import daily_occurrences 
-from gestorpsi.schedule.views import today_occurrences
-from gestorpsi.schedule.views import occurrence_confirmation_form
-from gestorpsi.schedule.views import occurrence_family_form, occurrence_employee_form
-from gestorpsi.schedule.views import occurrence_group
-from gestorpsi.schedule.views import week_view
-from gestorpsi.schedule.views import week_view_table
+
+from gestorpsi.schedule.views import occurrence_view, schedule_settings, add_event, schedule_index, schedule_occurrence_listing_today, event_view, daily_occurrences, today_occurrences, occurrence_confirmation_form, occurrence_family_form, occurrence_employee_form, occurrence_group, week_view, week_view_table
 
 urlpatterns = patterns('',
-     url(
+    url(
         r'^(?:calendar/)?$', 
         login_check(schedule_index), 
         name='schedule-index'
+    ),
+
+    # set schedule slot time
+    url(
+        r'^settings/$', 
+        login_check(schedule_settings), 
+        name='schedule-settings'
     ),
 
     # index, not default place
      url(
         r'^place/(?P<place>([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}))/$', 
         login_check(schedule_index), 
+        name='schedule-index'
+    ),
+
+     url(
+        r'^events/place/(?P<place>([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}))/$', 
+        login_check(schedule_occurrence_listing_today),
         name='schedule-index'
     ),
     
@@ -97,12 +100,17 @@ urlpatterns = patterns('',
         name='swingtime-week'
     ),
     url(
-        r'^week/(\d{4})/(0?[1-9]|1[012])/([0-3]?\d)/$', 
+        r'^week/place/(?P<place>([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}))/$', 
+        login_check(week_view),
+        name='schedule-index'
+    ),
+    url(
+        r'^week/([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})/(\d{4})/(0?[1-9]|1[012])/([0-3]?\d)/$', 
         login_check(week_view_table),
         name='swingtime-week-table'
     ),
     url(
-        r'^week/today/$', 
+        r'^week/today/([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})/$', 
         login_check(week_view_table),
         name='swingtime-week-table'
     ),

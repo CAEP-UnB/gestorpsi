@@ -21,14 +21,11 @@ GNU General Public License for more details.
 {% block menu_schedule %}active{% endblock %}
 
 {% block submenu %}
- <ul id="sub_schedule">
-    <li><a class="first" href="/schedule/">{% trans "daily" %}</a></li>
-    <li><a class="" href="/schedule/week/">{% trans "Weekly" %}</a></li>
-    <li><a class="active" href="/schedule/events/">{% trans "events" %}</a></li>
-</ul>
+    {% include "schedule/schedule_submenu.html" %}
 {% endblock %}
 
 {% block core %}
+<input type="hidden" name="restrict_schedule" value="{{ restrict_schedule }}" />
 <script type="text/javascript" src="/media/js/gestorpsi.schedule.js"></script>
 <script type="text/javascript" src="/media/js/gestorpsi.schedule.filter.js"></script>
 <div class="schedule">
@@ -39,11 +36,11 @@ GNU General Public License for more details.
         {% include "schedule/schedule_header.html" %}
     </div>
 
-    <div id="events">
+    <div id="events" style="margin-top:120px;">
     
-        <div class="schedule_events">
-            <table class="zebra schedule_results events" >
-            <div class="msg_area alert" style="display:none">{% trans "There is no events for this day." %}</div>
+        <div class="schedule_events" >
+            <table class="zebra schedule_results events">
+            <div class="msg_area alert" style="display:none;">{% trans "There is no events for this day." %}</div>
             <tr>
                 <th class="tiny">{% trans "Room" %}</th>
                 <th class="small">{% trans "Hour" %}</th>
@@ -54,10 +51,3 @@ GNU General Public License for more details.
     </div>
 </div>
 {% endblock %}
-
-
-
-
-    
-    
-
