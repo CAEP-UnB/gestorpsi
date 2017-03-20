@@ -20,7 +20,7 @@ import cgi
 import random
 from django import http
 from django.http import HttpResponse
-from django.utils import simplejson
+import json
 from django.template.loader import get_template
 from django.template import Context
 from gestorpsi.util.models import Cnae
@@ -56,7 +56,7 @@ def cnae(request):
     for i in Cnae.objects.filter(cnae_class__icontains=request.GET.get('query')):
         results.append({'id': i.id, 'name': i.cnae_class})
     
-    return HttpResponse(simplejson.dumps(results))
+    return HttpResponse(json.dumps(results))
 
 def ocupation(request):
     '''
@@ -66,7 +66,7 @@ def ocupation(request):
     for i in Occupation.objects.filter(title__icontains=request.GET.get('query')):
         results.append({'id': i.cbo_code, 'name': i.title })
     
-    return HttpResponse(simplejson.dumps(results))
+    return HttpResponse(json.dumps(results))
 
 def write_pdf(template_src, context_dict, filename='output.pdf'):
     template = get_template(template_src)

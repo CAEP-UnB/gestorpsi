@@ -22,12 +22,12 @@ GNU General Public License for more details.
 
 {% block submenu %}
     <ul>
-        <li><a class="first" href="{% url profile-client-referral-list %}">{% trans "all" %}</a></li>
+        <li><a class="first" href="{% url 'profile-client-referral-list' %}">{% trans "all" %}</a></li>
         {% if referral.id %}
-            <li><a class="first active" href="{% url profile-client-referral-home referral.id %}">{{ referral }}</a></li>
+            <li><a class="first active" href="{% url 'profile-client-referral-home' referral.id %}">{{ referral }}</a></li>
         {% else %}
             {% if messagetopic.referral.id %}
-                <li><a class="first active" href="{% url profile-client-referral-home messagetopic.referral.id %}">{{ messagetopic.referral }}</a></li>
+                <li><a class="first active" href="{% url 'profile-client-referral-home' messagetopic.referral.id %}">{{ messagetopic.referral }}</a></li>
             {% endif %}
         {% endif %}
     </ul>

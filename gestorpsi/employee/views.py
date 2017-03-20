@@ -27,7 +27,7 @@ from gestorpsi.address.models import Country, State, AddressType, City
 from gestorpsi.internet.models import EmailType, IMNetwork
 from gestorpsi.document.models import TypeDocument, Issuer
 from gestorpsi.person.views import person_save
-from django.utils import simplejson
+import json
 from gestorpsi.util.decorators import permission_required_with_403
 from gestorpsi.person.views import person_json_list
 
@@ -54,7 +54,7 @@ def list(request, page = 1, initial = None, filter = None, no_paging = False, de
     if filter:
         object = object.filter(person__name__icontains = filter)
 
-    return HttpResponse(simplejson.dumps(person_json_list(request, object, 'client.client_read', page, no_paging), sort_keys=True), mimetype='application/json')
+    return HttpResponse(json.dumps(person_json_list(request, object, 'client.client_read', page, no_paging), sort_keys=True), mimetype='application/json')
 
 @permission_required_with_403('employee.employee_list')
 def lista(request, page = 1 , deactive = False):
@@ -63,7 +63,7 @@ def lista(request, page = 1 , deactive = False):
     else:   
         object = Employee.objects.active(request.user.get_profile().org_active)
          
-    return HttpResponse(simplejson.dumps(person_json_list(request, object, 'employee.employee_read', page)),
+    return HttpResponse(json.dumps(person_json_list(request, object, 'employee.employee_read', page)),
                             mimetype='application/json')
 
 @permission_required_with_403('employee.employee_read')

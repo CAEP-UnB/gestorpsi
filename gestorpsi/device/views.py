@@ -20,7 +20,7 @@ from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.core.paginator import Paginator
-from django.utils import simplejson
+import json
 from django.db.models import Q
 from django.utils.translation import ugettext as _
 from django.contrib import messages
@@ -84,7 +84,7 @@ def list(request, page = 1, initial = None, filter = None, deactive = False):
         }
         i = i + 1
 
-    return HttpResponse(simplejson.dumps(array, sort_keys=True), mimetype='application/json')
+    return HttpResponse(json.dumps(array, sort_keys=True), mimetype='application/json')
 
 @permission_required_with_403('device.device_list')
 def list_types(request, page = 1):
@@ -121,7 +121,7 @@ def list_types(request, page = 1):
         }
         i = i + 1
 
-    return HttpResponse(simplejson.dumps(array), mimetype='application/json')
+    return HttpResponse(json.dumps(array), mimetype='application/json')
 
 
 @permission_required_with_403('device.device_read')

@@ -33,10 +33,10 @@ GNU General Public License for more details.
 
 {% comment %}
 <ul>
-    <li><a href="{% url messages_inbox %} ">&raquo;&nbsp;{% trans "Inbox" %}</a></li>
-    <li><a href="{% url messages_outbox %} ">&raquo;&nbsp;{% trans "Sent Messages" %}</a></li>
-    <li><a href="{% url messages_compose %} ">&raquo;&nbsp;{% trans "New Message" %}</a></li>
-    <li><a href="{% url messages_trash %} ">&raquo;&nbsp;{% trans "Trash" %}</a></li>
+    <li><a href="{% url 'messages_inbox' %} ">&raquo;&nbsp;{% trans "Inbox" %}</a></li>
+    <li><a href="{% url 'messages_outbox' %} ">&raquo;&nbsp;{% trans "Sent Messages" %}</a></li>
+    <li><a href="{% url 'messages_compose' %} ">&raquo;&nbsp;{% trans "New Message" %}</a></li>
+    <li><a href="{% url 'messages_trash' %} ">&raquo;&nbsp;{% trans "Trash" %}</a></li>
 </ul>
 {% endcomment %}
 {% endblock %}

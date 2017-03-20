@@ -39,7 +39,7 @@ GNU General Public License for more details.
     <h3>{% trans 'Occurrence Employees' %}</h3>
     <ul>
        {% if not occurrence.occurrenceemployees %}
-       <li><a class="company_employees" href="{% url swingtime-occurrence-employee-form occurrence.id %}">{% trans "Schedule employee on this occurrence" %}</a><br /></li>
+       <li><a class="company_employees" href="{% url 'swingtime-occurrence-employee-form' occurrence.id %}">{% trans "Schedule employee on this occurrence" %}</a><br /></li>
        {% else %}
             {% for f in occurrence.occurrenceemployees.client.all %}
                 <li><a href="/client/{{ f.id }}/" title="{{ f }}">{{ f }}</a></li>

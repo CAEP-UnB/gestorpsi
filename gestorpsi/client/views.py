@@ -22,7 +22,7 @@ from django.template import RequestContext
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext as _
-from django.utils import simplejson
+import json
 from django.template.defaultfilters import slugify
 from django.db.models import Q
 from django.contrib import messages
@@ -226,7 +226,7 @@ def list(request, page=1, initial=None, filter=None, no_paging=False, deactive=F
             }
             i = i + 1
 
-        return HttpResponse(simplejson.dumps(person, encoding = 'iso8859-1'), mimetype='application/json')
+        return HttpResponse(json.dumps(person, encoding = 'iso8859-1'), mimetype='application/json')
 
 
 
@@ -896,7 +896,7 @@ def organization_clients(request):
         array.append(c)
 
     dict['results'] = array
-    array = simplejson.dumps(dict, encoding = 'iso8859-1')
+    array = json.dumps(dict, encoding = 'iso8859-1')
 
     #return HttpResponse(array, mimetype='application/json')
     return HttpResponse(array)

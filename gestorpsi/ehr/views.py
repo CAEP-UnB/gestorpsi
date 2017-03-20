@@ -20,7 +20,7 @@ from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render_to_response, get_object_or_404
 from django.utils.translation import ugettext as _
 from django.template import RequestContext
-from django.utils import simplejson
+import json
 from django.contrib import messages
 from gestorpsi.util.views import get_object_or_None
 from gestorpsi.util.decorators import permission_required_with_403
@@ -473,7 +473,7 @@ def session_form(request, client_id, referral_id, session_id=0):
             session.save()
 
             url = '/client/%s/%s/session/%s/item/' % (client_id, referral_id, session.pk)
-            return HttpResponse(simplejson.dumps({'occurrence_pk':request.POST.get('occurrence'), 'url':url}))
+            return HttpResponse(json.dumps({'occurrence_pk':request.POST.get('occurrence'), 'url':url}))
 
     else: # GET
 

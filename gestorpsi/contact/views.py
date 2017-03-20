@@ -14,7 +14,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 """
 
-from django.utils import simplejson
+import json
 from django.shortcuts import render_to_response, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.template import RequestContext
@@ -150,7 +150,7 @@ def list(request, page = 1, initial = None, filter = None, deactive=False, filte
         }
         i = i + 1
 
-    return HttpResponse(simplejson.dumps(array, sort_keys=True), mimetype='application/json')
+    return HttpResponse(json.dumps(array, sort_keys=True), mimetype='application/json')
 
 @permission_required_with_403('contact.contact_read')
 def contact_organization_form(request, object_id = None):

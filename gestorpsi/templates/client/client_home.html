@@ -146,7 +146,7 @@ GNU General Public License for more details.
                
                {% if referral.description %}{% trans "Referral discharge description" %}:&nbsp;{{ referral.description }}{% endif %}
                <div style="clear"></div>
-               <a href="{% url referral_discharge_edit object.pk referral.referral.pk referral.pk %}">{% trans "edit" %}</a>
+               <a href="{% url 'referral_discharge_edit' object.pk referral.referral.pk referral.pk %}">{% trans "edit" %}</a>
                     </div>
                </div>
             {% endfor %}

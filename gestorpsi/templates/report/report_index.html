@@ -52,7 +52,7 @@ GNU General Public License for more details.
     <div class="tab_content dashboard">
         <p class="description">{% trans "Displaying reports. Use the controls below to customize this page and save it on the tab My Reports" %}</p>
         <div class="report_filter_nav">
-        <form method="post" id="report_filter" action="{% url report_export %}">
+        <form method="post" id="report_filter" action="{% url 'report_export' %}">
             {% trans "Reports for" %} {{ form.view }} 
             {% trans "between" %} {{ form.date_start }} {% trans "and" %} {{ form.date_end }}
             {{ form.accumulated }}

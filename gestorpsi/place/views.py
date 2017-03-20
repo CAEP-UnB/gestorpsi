@@ -19,7 +19,7 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 from django.core.paginator import Paginator
-from django.utils import simplejson
+import json
 from django.utils.translation import ugettext as _
 from django.contrib import messages
 from gestorpsi.place.models import Place, Room, RoomType, PlaceType, HOURS
@@ -94,7 +94,7 @@ def list(request, page=1, initial=None, filter=None, no_paging=False,
         i = i + 1
 
     return HttpResponse(
-        simplejson.dumps(array, sort_keys=True),
+        json.dumps(array, sort_keys=True),
         mimetype='application/json')
 
 
@@ -270,7 +270,7 @@ def room_list(request, page=1, initial=None,
         }
         i = i + 1
 
-    return HttpResponse(simplejson.dumps(array, sort_keys=True),
+    return HttpResponse(json.dumps(array, sort_keys=True),
                         mimetype='application/json')
 
 

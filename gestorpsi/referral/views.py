@@ -16,7 +16,7 @@ GNU General Public License for more details.
 
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response, get_object_or_404
-from django.utils import simplejson
+import json
 from django.template import RequestContext
 from django.utils.translation import ugettext as _
 from gestorpsi.client.models import Client
@@ -78,7 +78,7 @@ def client_referrals(request, object_id=None):
 
         i = i + 1
 
-    array = simplejson.dumps(array, encoding='iso8859-1')
+    array = json.dumps(array, encoding='iso8859-1')
 
     return HttpResponse(array, mimetype='application/json')
 

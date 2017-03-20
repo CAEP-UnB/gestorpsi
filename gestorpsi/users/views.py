@@ -26,7 +26,7 @@ from django.contrib.sites.models import get_current_site
 from registration.models import RegistrationProfile
 from gestorpsi.authentication.models import Profile, Role
 from gestorpsi.person.models import Person
-from django.utils import simplejson
+import json
 from gestorpsi.util.decorators import permission_required_with_403
 from gestorpsi.person.views import person_json_list
 
@@ -61,7 +61,7 @@ def list(request, page=1, initial=None, filter=None, deactive=False):
         object = object.filter(person__name__icontains=filter)
 
     return HttpResponse(
-        simplejson.dumps(
+        json.dumps(
             person_json_list(
                 request,
                 object,
@@ -341,7 +341,7 @@ def set_form_user(request, object_id=0):
     array[0] = slugify(person.name)
     array[1] = u'%s' % person.get_first_email()
 
-    return HttpResponse(simplejson.dumps(array), mimetype='application/json')
+    return HttpResponse(json.dumps(array), mimetype='application/json')
 
 
 @permission_required_with_403('users.users_write')

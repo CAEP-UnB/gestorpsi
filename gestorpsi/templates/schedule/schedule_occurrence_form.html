@@ -70,7 +70,7 @@ GNU General Public License for more details.
             <h2 class="red">{% trans "Upcoming Occurrences" %}</h2>
             <p>
             {% for o in occurrence.event.upcoming_occurrences.all %}
-                <a href="{% url swingtime-occurrence occurrence.event.id o.id %}">
+                <a href="{% url 'swingtime-occurrence' occurrence.event.id o.id %}">
                     {{ o.start_time|date:"l, d" }} {% trans "of" %} {{ o.start_time|date:"F" }} {% trans "of" %} {{ o.start_time|date:"Y" }} {{ o.start_time|date:"H:i" }} - {{ o.end_time|date:"H:i" }}
                 </a>
             <br />
