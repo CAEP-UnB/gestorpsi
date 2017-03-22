@@ -16,7 +16,7 @@ GNU General Public License for more details.
 
 import locale
 from django.http import HttpResponse
-from django.utils import simplejson
+import json as simplejson
 from gestorpsi.address.models import Country, Address, City, AddressType
 
 # Check if addresses fields are equals

@@ -14,7 +14,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 """
 
-from django.conf.urls.defaults import url, patterns
+from django.conf.urls import url, patterns
 from django.views.generic.simple import direct_to_template
 from django.contrib.auth.decorators import login_required
 

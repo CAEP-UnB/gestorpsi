@@ -14,7 +14,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 """
 
-from django.conf.urls.defaults import *
+from django.conf.urls import *
 from gestorpsi.device.views import index, form, save, save_device, index_type, form_type, list, list_types, order
 from gestorpsi.authentication.views import login_check
 

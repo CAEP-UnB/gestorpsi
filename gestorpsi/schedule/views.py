@@ -24,7 +24,7 @@ from django.template.context import RequestContext
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render_to_response, HttpResponse
 from django.utils.translation import ugettext as _
-from django.utils import simplejson
+import json as simplejson
 from django.db.models import Q
 from django.contrib import messages
 # from django.contrib.auth.models import User
