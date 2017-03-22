@@ -14,7 +14,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 """
 
-from django.utils import simplejson
+import json as simplejson
 from django.utils.translation import ugettext as _
 from django.conf import settings
 from django.shortcuts import render_to_response, get_object_or_404
@@ -29,7 +29,6 @@ from gestorpsi.service.models import Service, Area, ServiceType, Modality
 from gestorpsi.person.views import person_json_list
 from gestorpsi.careprofessional.models import CareProfessional, Profession
 from gestorpsi.referral.models import Queue, Referral
-from django.utils import simplejson
 from gestorpsi.util.decorators import permission_required_with_403
 from gestorpsi.util.views import get_object_or_None, color_rand
 from gestorpsi.organization.models import AgeGroup, EducationLevel, HierarchicalLevel

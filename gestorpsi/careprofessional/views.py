@@ -17,7 +17,7 @@ GNU General Public License for more details.
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.http import HttpResponse, HttpResponseRedirect
-from django.utils import simplejson
+import json as simplejson
 from django.utils.translation import ugettext as _
 from django.contrib import messages
 from gestorpsi.person.models import Person, MaritalStatus

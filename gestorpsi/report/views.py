@@ -22,7 +22,7 @@ from django.template import RequestContext
 from django.utils.translation import ugettext as _
 from django.shortcuts import get_object_or_404
 from django.template.defaultfilters import slugify
-import json
+import json as simplejson
 from gestorpsi.admission.models import AdmissionReferral
 from gestorpsi.report.forms import ReportForm, ReportSaveAdmissionForm
 from gestorpsi.report.models import ReportAdmission, ReportsSaved, Report, ReportReferral
