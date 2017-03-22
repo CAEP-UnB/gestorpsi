@@ -101,6 +101,7 @@ class ScheduleSingleOccurrenceForm(SingleOccurrenceForm):
 
     class Meta:
         model = ScheduleOccurrence
+        exclude = ()
 
 
 class ScheduleOccurrenceForm(MultipleOccurrenceForm):

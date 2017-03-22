@@ -28,7 +28,7 @@ class TimeUnitForm(forms.ModelForm):
 
 class DemandForm(forms.ModelForm):
     occurrence = forms.ModelChoiceField(queryset=ScheduleOccurrence.objects.all(), required=False, label=_('Occurence'), widget=forms.Select(attrs={'class':'giant asm'}))
-    initial_complaint = forms.BooleanField(label=_('Initial complaint'), required=False, widget=forms.CheckboxInput)
+    initial_complaint = forms.BooleanField(default=False, label=_('Initial complaint'), required=False, widget=forms.CheckboxInput)
     demand = forms.CharField(label=_('Demand'), required=True, widget=forms.TextInput(attrs={'class':'giant asm'}))
     description = forms.CharField(label=_('Description'), required=False, widget=forms.Textarea(attrs={'class':'giant asm'}))
     severity = forms.ChoiceField(choices=SEVERITY, label=_('Severity'), widget=forms.Select(attrs={'class':'giant asm'}))

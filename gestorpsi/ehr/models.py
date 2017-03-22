@@ -80,7 +80,7 @@ class Demand(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now=True)
     edit_status = models.CharField(max_length=2, choices=EDIT_STATUS)
-    initial_complaint = models.BooleanField()
+    initial_complaint = models.BooleanField(default=False)
     demand = models.TextField(blank=True)
     description = models.TextField(blank=True)
     how_long_it_happens = models.OneToOneField(TimeUnit, null=True, related_name="how_long_it_happens")

@@ -55,6 +55,7 @@ class ReportForm(forms.ModelForm):
     
     class Meta:
         model = Report
+        exclude = ()
 
     def __init__(self, date_start, date_end, organization, *args, **kwargs):
         super(ReportForm, self).__init__(*args, **kwargs)

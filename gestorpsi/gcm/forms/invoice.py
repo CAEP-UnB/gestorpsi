@@ -28,3 +28,4 @@ class InvoiceForm(forms.ModelForm):
 
     class Meta:
         model = Invoice
+        exclude = ()

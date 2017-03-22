@@ -158,6 +158,7 @@ class BradescoBilletDataAdminForm(forms.ModelForm):
 
     class Meta:
         model = BradescoBilletData
+        exclude = ()
 
     class Media:
         js = (
