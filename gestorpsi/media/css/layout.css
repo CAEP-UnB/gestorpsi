@@ -1505,9 +1505,18 @@ body .main_area.login {
         text-align: center;
 }
 
-body .main_area.login form fieldset {
+body .main_area.register {
+        width: 750px;
+        margin: 50px auto;
+        float: none;
+        border: none;
+        background: none;
+        text-align: center;
+}
+
+body .main_area.register form fieldset{
         background:#ECECEC;
-        padding: 25px;
+        padding: 10px;
         -moz-border-radius-topleft: 8px;
         -moz-border-radius-topright: 8px;
         -moz-border-radius-bottomleft: 8px;
@@ -1518,12 +1527,32 @@ body .main_area.login form fieldset {
         -webkit-border-radius-bottomright: 8px;
         border: 1px solid #838383;
 }
+body .main_area.login form fieldset {
+        background:#ECECEC;
+        padding: 10px;
+        -moz-border-radius-topleft: 8px;
+        -moz-border-radius-topright: 8px;
+        -moz-border-radius-bottomleft: 8px;
+        -moz-border-radius-bottomright: 8px;
+        -webkit-border-radius-topleft: 8px;
+        -webkit-border-radius-topright: 8px;
+        -webkit-border-radius-bottomleft: 8px;
+        -webkit-border-radius-bottomright: 8px;
+        border: 1px solid #838383;
+}
+
+body .main_area.register form fieldset.orgField,
 body .main_area.login form fieldset.orgField {
         background: #D3E7E7 url(/media/img/22/go-home.png) no-repeat 5px 5px;
+
 }
+
+body .main_area.register form fieldset.userField,
 body .main_area.login form fieldset.userField {
         background:#ECECEC url(/media/img/22/people-professional.png) no-repeat 5px 5px;
 }
+
+
 form p {
     font-size: 10px;
     color: #999999;
@@ -1544,9 +1573,11 @@ body .main_area.login form  span.error {
 div.ie_block label, div.main_area.login label {
         text-align: left;
         display: block;
-        margin-left: 0;
+        margin-left: 5px;
 }
+
 div.ie_block label p,
+div.main_area.register label p,
 div.main_area.login label p {
         padding: 0;
         margin: 0;
@@ -1557,6 +1588,12 @@ div.ie_block label input,
 div.main_area.login label input
  {
         width: 250px;
+}
+
+div.main_area.register label input
+ {
+        width: 325px;
+        text-align: center;
 }
 
 fieldset.collapsed {
@@ -1601,8 +1638,8 @@ div.login img {
 }
 
 textarea.terms_of_service {
-    width: 253px !important;
-    height: 100px !important;
+    width: 600px !important;
+    height: 300px !important;
 }
 
 /* list paginator */
