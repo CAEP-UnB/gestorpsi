@@ -13,7 +13,6 @@ from django.views.generic.list_detail import object_detail as generic_object_det
 from django.views.generic.create_update import create_object as generic_create_object
 from django.views.generic.create_update import update_object as generic_update_object
 from django.views.generic.create_update import delete_object as generic_delete_object
-from django.views.generic.simple import direct_to_template as generic_direct_to_template
 
 from gestorpsi.organization.models import Organization
 from gestorpsi.organization.forms import OrganizationForm
@@ -97,7 +96,3 @@ def delete_object(request, *args, **kwargs):
             #0/0
     return generic_delete_object(request, *args, **kwargs)
 
-def direct_to_template(request, *args, **kwargs):
-    if not request.user.is_superuser:
-        return HttpResponseRedirect('/gcm/login/?next=%s' % request.path)
-    return generic_direct_to_template(request, *args, **kwargs)

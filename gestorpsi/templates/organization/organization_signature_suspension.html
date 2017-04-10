@@ -22,8 +22,8 @@
 
 {% block submenu %}
   <ul id="sub_organization">
-    <li><a href="{% url organization-signature %}">{% trans "Signature" %}</a></li>
-    <li><a class='first active'href="{% url organization-suspension %}">{% trans "Suspend" %}</a></li>
+    <li><a href="{% url 'organization-signature' %}">{% trans "Signature" %}</a></li>
+    <li><a class='first active'href="{% url 'organization-suspension' %}">{% trans "Suspend" %}</a></li>
   </ul>
 {% endblock %}
 
@@ -32,7 +32,7 @@
   <h2 class="title_signature title">{{ obj }}</h2>
   <p class="description"> {% trans "Organization signature" %}<br /></p>
 
-  <form action="{% url organization-suspension %}" method="post" class="form_people">
+  <form action="{% url 'organization-suspension' %}" method="post" class="form_people">
     <div class="main_area">
 
       <!-- plan and payment area -->

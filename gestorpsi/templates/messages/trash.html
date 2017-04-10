@@ -31,7 +31,7 @@ GNU General Public License for more details.
         {{ message.subject }}
         </td>
         <td>{{ message.sent_at|date:_("DATETIME_FORMAT") }}</td>
-        <td><a href="{% url messages_undelete message.id %}">{% trans "undelete" %}</a></td>
+        <td><a href="{% url 'messages_undelete' message.id %}">{% trans "undelete" %}</a></td>
     </tr>
 {% endfor %}
     </tbody>

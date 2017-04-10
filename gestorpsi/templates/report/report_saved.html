@@ -28,7 +28,7 @@ GNU General Public License for more details.
     <br />
     <ul>
         {% for i in reports %}
-            <li class="{% cycle 'odd' '' %}"><span class="title">{{ i }}<span class="tools"><a class="pointer report_load" view="{{ i.view}}" title="{{ i.label }}" date="{{ i.date|date:"d/m/Y H:i" }}" data="{{ i.data }}">{% trans "load report" %}</a>&nbsp;<a href="{% url report_del i.id %}" class="del_report">{% trans "del" %}</a></span></li>
+            <li class="{% cycle 'odd' '' %}"><span class="title">{{ i }}<span class="tools"><a class="pointer report_load" view="{{ i.view}}" title="{{ i.label }}" date="{{ i.date|date:"d/m/Y H:i" }}" data="{{ i.data }}">{% trans "load report" %}</a>&nbsp;<a href="{% url 'report_del' i.id %}" class="del_report">{% trans "del" %}</a></span></li>
         {% endfor %}
     </ul>
     <small>{% trans "Total" %} {{ reports|length }}</small>
@@ -44,10 +44,10 @@ GNU General Public License for more details.
     <br />
     <ul>
         {% for i in trash %}
-            <li class="{% cycle 'odd' '' %}"><span class="title">{{ i }}<span class="tools"><a class="pointer report_load_admission" title="{{ i.label }}" date="{{ i.date|date:"d/m/Y H:i" }}" data="{{ i.data }}">{% trans "load report" %}</a>&nbsp;<a href="{% url report_undelete i.id %}" class="del_report">{% trans "undelete" %}</a></span></li>
+            <li class="{% cycle 'odd' '' %}"><span class="title">{{ i }}<span class="tools"><a class="pointer report_load_admission" title="{{ i.label }}" date="{{ i.date|date:"d/m/Y H:i" }}" data="{{ i.data }}">{% trans "load report" %}</a>&nbsp;<a href="{% url 'report_undelete' i.id %}" class="del_report">{% trans "undelete" %}</a></span></li>
         {% endfor %}
     </ul>
-    <small>{% trans "Total" %} {{ trash|length }}</small><small style="float:right;"><a href="{% url report_empty %}" class="del_report">{% trans "empty trash" %}</a></small>
+    <small>{% trans "Total" %} {{ trash|length }}</small><small style="float:right;"><a href="{% url 'report_empty' %}" class="del_report">{% trans "empty trash" %}</a></small>
 </div>
 {% endif %}
 
