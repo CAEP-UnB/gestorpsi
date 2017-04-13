@@ -75,3 +75,41 @@ def setup_required_data():
     address.content_object = place
 
     place.save()
+
+def user_stub():
+    return {
+        "address": u'niceaddress',
+        "address_number": u'244',
+        "city": u'1',
+        "cpf": u'741.095.117-63',
+        "email": u'user15555@gmail.com',
+        "name": u'user15555',
+        "organization": u'niceorg',
+        "password1": u'nicepass123',
+        "password2": u'nicepass123',
+        "phone": u'(55) 5432-4321',
+        "plan": u'1',
+        "shortname": u'NICE',
+        "state": u'1',
+        "username": u'user15',
+        "zipcode": u'12312-123',
+    }
+
+def bad_user_stub():
+    return {
+        "address": u'niceaddress',
+        "address_number": u'244',
+        "city": u'1',
+        "cpf": u'741.095.117-63',
+        "email": u'user15555@gmail.com',
+        "name": u'user15555',
+        "organization": u'niceorg',
+        "password1": u'nicepass123',
+        "password2": u'nicepass1', # different pass
+        "phone": u'(55) 5432-4321',
+        "plan": u'1',
+        "shortname": u'NICE',
+        "state": u'1',
+        "username": u'user15',
+        "zipcode": u'12312-123',
+    }
