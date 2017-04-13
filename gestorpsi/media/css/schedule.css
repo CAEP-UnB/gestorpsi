@@ -240,7 +240,7 @@ div.sidebar_client_schedule {
 .gargin_top_fix { margin-top: 45px; }
 
 #schedule_header{
-    position:fixed;
+    position:absolute;
     margin-top:-120px;
     width: 975px;
     height: 125px;
