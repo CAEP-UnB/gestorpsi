@@ -69,7 +69,7 @@ class Service(models.Model):
     @version: 1.0
     """
     id = UuidField(primary_key=True)
-    name = models.CharField(max_length=80)
+    name = models.CharField(max_length=80, blank=False)
     description = models.CharField(max_length=999, blank=True)
     keywords = models.CharField(max_length=100, blank=True)
     active = models.BooleanField(default=True)

@@ -210,7 +210,6 @@ def form(request, object_id=None):
 
 @permission_required_with_403('service.service_write')
 def save(request, object_id=''):
-
     object = get_object_or_404(Service, pk=object_id, organization=request.user.get_profile().org_active) if object_id else Service()
     object.organization = request.user.get_profile().org_active
     object.name = request.POST.get('service_name')
