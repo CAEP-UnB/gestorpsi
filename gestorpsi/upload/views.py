@@ -36,7 +36,7 @@ def send(request):
         if 'file' in request.FILES:
             pathdir = '%s/img/organization/%s' % (MEDIA_ROOT, user.get_profile().org_active.id)
             if not os.path.exists(pathdir):
-                os.mkdir(pathdir)
+                os.makedirs(pathdir)
                 os.mkdir('%s/.thumb' % pathdir)
                 os.mkdir('%s/.thumb-whitebg' % pathdir)
                 os.chmod(pathdir, 0777)
