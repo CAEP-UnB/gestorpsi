@@ -8,9 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2015-12-01 17:19-0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+=======
+"POT-Creation-Date: 2017-04-02 12:38-0300\n"
+"PO-Revision-Date: 2013-01-31 17:29\n"
+"Last-Translator:   <danielcj@doois.com.br>\n"
+>>>>>>> 5a35666... Refactoring translations language in admission form and organization signature templates
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -26,7 +32,6 @@ msgid "English"
 msgstr "Ingles"
 
 #: admission/models.py:27 referral/models.py:68
-#: templates/admission/admission_form.html:157
 msgid "Termo de Consentimento Livre e Esclarecido (TCLE)"
 msgstr ""
 
@@ -201,7 +206,11 @@ msgstr "Entre com seu CEP"
 msgid "State"
 msgstr "Estado"
 
+<<<<<<< HEAD
 #: authentication/forms.py:123 authentication/forms.py:124
+=======
+#: authentication/forms.py:124
+>>>>>>> 5a35666... Refactoring translations language in admission form and organization signature templates
 msgid "Enter your state here"
 msgstr "Entre com o seu estado aqui"
 
@@ -212,7 +221,11 @@ msgstr "Entre com o seu estado aqui"
 msgid "City"
 msgstr "Cidade"
 
+<<<<<<< HEAD
 #: authentication/forms.py:123 authentication/forms.py:124
+=======
+#: authentication/forms.py:125
+>>>>>>> 5a35666... Refactoring translations language in admission form and organization signature templates
 msgid "Enter your city here"
 msgstr "Entre com a sua cidade aqui"
 
@@ -1525,6 +1538,9 @@ msgstr ""
 
 #: gcm/models/invoice.py:67
 #: templates/organization/organization_signature.html:50
+#: templates/organization/organization_signature.html:128
+#: templates/organization/organization_signature.html:189
+#: templates/organization/organization_signature.html:251
 #: templates/tags/invoice.html:57
 msgid "Plan"
 msgstr ""
@@ -3131,6 +3147,10 @@ msgstr ""
 #: templates/client/client_print.html:120
 msgid "Signed by the client"
 msgstr ""
+
+#: templates/admission/admission_form.html:157
+msgid "Free Informed Consent Term"
+msgstr "Termo de Consentimento Livre e Esclarecido (TCLE)"
 
 #: templates/admission/admission_form.html:182
 msgid "Media"
@@ -5245,6 +5265,9 @@ msgid "Sent"
 msgstr ""
 
 #: templates/messages/outbox.html:24 templates/messages/trash.html:24
+#: templates/organization/organization_signature.html:131
+#: templates/organization/organization_signature.html:192
+#: templates/organization/organization_signature.html:254
 msgid "Action"
 msgstr ""
 
@@ -5545,6 +5568,7 @@ msgid ""
 msgstr ""
 
 #: templates/organization/organization_signature.html:69
+<<<<<<< HEAD
 msgid "Forma de pagamento"
 msgstr ""
 
@@ -5556,6 +5580,65 @@ msgstr ""
 msgid "Suspender assinatura"
 msgstr ""
 
+=======
+msgid "Payment methods"
+msgstr "Métodos de pagamento"
+
+#: templates/organization/organization_signature.html:90
+msgid "To change your form of payment or any question"
+msgstr "Para mudar sua forma de pagamento ou qualquer pergunta"
+
+#: templates/organization/organization_signature.html:90
+msgid "contact"
+msgstr "entre em contato"
+
+#: templates/organization/organization_signature.html:120
+msgid "Invoice and payment history"
+msgstr "Histórico de faturas e pagamentos"
+
+#: templates/organization/organization_signature.html:125
+msgid "Next signature"
+msgstr "Assinatura"
+
+#: templates/organization/organization_signature.html:129
+#: templates/organization/organization_signature.html:190
+#: templates/organization/organization_signature.html:252
+msgid "Start"
+msgstr "Início"
+
+#: templates/organization/organization_signature.html:130
+#: templates/organization/organization_signature.html:191
+#: templates/organization/organization_signature.html:253
+
+msgid "Maturity"
+msgstr "Maturidade"
+
+#: templates/organization/organization_signature.html:174
+#: templates/organization/organization_signature.html:235
+#: templates/organization/organization_signature.html:297
+msgid "Paid in"
+msgstr "Pago em"
+
+#: templates/organization/organization_signature.html:248
+msgid "Signature expired"
+msgstr "Assinatura expirada"
+
+#: templates/organization/organization_signature_suspension.html:41
+msgid "Suspend signature"
+msgstr "Assinatura suspendida"
+
+#: templates/organization/organization_signature_suspension.html:44
+msgid ""
+"Suspending the subscription you will only be able to consult the data in the "
+"system, you will not be able to enter new information. You can re-use "
+"GestorPSI at any time, just"
+msgstr ""
+
+#: templates/organization/organization_signature_suspension.html:44
+msgid "contact us"
+msgstr "Contato"
+
+>>>>>>> 5a35666... Refactoring translations language in admission form and organization signature templates
 #: templates/organization/organization_signature_suspension.html:46
 msgid "Deseja suspender a assinatura?"
 msgstr ""
@@ -7299,7 +7382,758 @@ msgstr ""
 
 #: users/views.py:351
 msgid "Email updated successfully!"
+<<<<<<< HEAD
 msgstr ""
+=======
+msgstr "E-mail alterado com sucesso!"
+
+#, fuzzy
+#~ msgid "plano"
+#~ msgstr "Plano"
+
+#, fuzzy
+#~ msgid "inicio"
+#~ msgstr "Início"
+
+#, fuzzy
+#~ msgid "ação"
+#~ msgstr "Organização"
+
+#, fuzzy
+#~ msgid "Métodos de pagamento"
+#~ msgstr "Data do Pagamento"
+
+#, fuzzy
+#~ msgid "entre em contato"
+#~ msgstr "ver contatos remotos"
+
+#~ msgid "Close"
+#~ msgstr "Fechar"
+
+#~ msgid "Invalid Username"
+#~ msgstr "Nome de usuário inválido"
+
+#~ msgid "Your account has been disable. Please contact your administrator."
+#~ msgstr ""
+#~ "Sua conta foi desativada. Por favor, entre em contato com o seu "
+#~ "administrador."
+
+#~ msgid ""
+#~ "Informed organization is already registered. Please choice another name "
+#~ "here or login with an existing account"
+#~ msgstr ""
+#~ "O estabelecimento informado já está registrado. Por favor, escolha outro "
+#~ "nome ou acesse com uma conta já existente"
+
+#~ msgid "State/Region"
+#~ msgstr "Estado"
+
+#~ msgid "Choice one organization"
+#~ msgstr "Escolha um estabelecimento"
+
+#~ msgid "Emitido"
+#~ msgstr "Emitido"
+
+#~ msgid "Pago"
+#~ msgstr "Pago"
+
+#~ msgid "Excluido"
+#~ msgstr "Excluído"
+
+#~ msgid "Formato dd/mm/aaaa. Ex.: 16/12/2009"
+#~ msgstr "Formato dd/mm/aaaa. Ex.: 16/12/2009"
+
+#~ msgid "Estado"
+#~ msgstr "Estado"
+
+#~ msgid "Billet URL"
+#~ msgstr "URL do boleto"
+
+#~ msgid "URL of the billet to pay this invoice"
+#~ msgstr "URL do boleto para pagar esta fatura"
+
+#~ msgid "Invoice Configurations"
+#~ msgstr "Configurações de fatura"
+
+#~ msgid "Billets main data"
+#~ msgstr "Dados principais dos boletos"
+
+#~ msgid "Organizacoes Pendentes"
+#~ msgstr "Organizações Pendentes"
+
+#~ msgid "Deseja realmente deletar "
+#~ msgstr "Deseja realmente apagar?"
+
+#~ msgid "Todos os registros relacionado serão excluídos também"
+#~ msgstr "Todos os registros relacionados serão excluídos também."
+
+#~ msgid "Cancelar"
+#~ msgstr "Cancelar"
+
+#~ msgid "Planos"
+#~ msgstr "Planos"
+
+#~ msgid "Plan Details"
+#~ msgstr "Detalhes do Plano"
+
+#~ msgid "Plans"
+#~ msgstr "Planos"
+
+#~ msgid "Return Files"
+#~ msgstr "Arquivos de retorno"
+
+#~ msgid "Nenhuma fatura registrada até o momento!"
+#~ msgstr "Nenhuma fatura registrada até o momento!"
+
+#~ msgid "CM"
+#~ msgstr "CM"
+
+#~ msgid "GestorPSI"
+#~ msgstr "GestorPsi"
+
+#~ msgid "Controle de clientes"
+#~ msgstr "Controle de clientes"
+
+#~ msgid "Sair"
+#~ msgstr "Sair"
+
+#~ msgid "Organizacão"
+#~ msgstr "Organização"
+
+#~ msgid "Ativa"
+#~ msgstr "Ativa"
+
+#~ msgid "Desativada"
+#~ msgstr "Desativada"
+
+#~ msgid "Desativar?"
+#~ msgstr "Desativar?"
+
+#~ msgid "Ativar?"
+#~ msgstr "Ativar?"
+
+#~ msgid "Ativar/Desativar Organizacao"
+#~ msgstr "Ativar/Desativar Organização"
+
+#~ msgid ""
+#~ "Desativando esta organizacao, ela ficará impossibitada de adicionar novo "
+#~ "registros, ficarão apenas disponíveis dados para leitura como listagens, "
+#~ "consultas, relatórios etc"
+#~ msgstr ""
+#~ "Desativando esta organização, ela ficará impossibitada de adicionar novos "
+#~ "registros. Ficarão disponíveis apenas dados para leitura como listagens, "
+#~ "consultas, relatórios, etc."
+
+#~ msgid "Área"
+#~ msgstr "Área"
+
+#~ msgid "Número"
+#~ msgstr "Número"
+
+#~ msgid "Telefones desta organizacão"
+#~ msgstr "Telefones desta organização"
+
+#~ msgid "Nome"
+#~ msgstr "Nome"
+
+#~ msgid "Profissão"
+#~ msgstr "Profissão"
+
+#~ msgid "Profissional responsável"
+#~ msgstr "Profissional Responsável"
+
+#~ msgid "Data de Vencimento"
+#~ msgstr "Data do Vencimento"
+
+#~ msgid "Faturas desta organizacão"
+#~ msgstr "Faturas desta organização"
+
+#~ msgid "Altere o estado de pagamento desta fatura."
+#~ msgstr "Altere o estado de pagamento desta fatura."
+
+#~ msgid "Organization data"
+#~ msgstr "Informações da organização"
+
+#~ msgid "Esta organização não possui nenhuma fatura ainda."
+#~ msgstr "Esta organização não possui nenhuma fatura ainda."
+
+#~ msgid "Não existem organizacoes cadastradas"
+#~ msgstr "Não existem organizações cadastradas"
+
+#~ msgid "Ativo"
+#~ msgstr "Ativo"
+
+#~ msgid "Dados pendente a aprovacao"
+#~ msgstr "Dados sujeitos à aprovação"
+
+#~ msgid "Dados da Organizacão"
+#~ msgstr "Dados da organização"
+
+#~ msgid "Sigla"
+#~ msgstr "Sigla"
+
+#~ msgid "Dados do Profissional"
+#~ msgstr "Dados do profissional"
+
+#~ msgid "CPF"
+#~ msgstr "CPF"
+
+#~ msgid "Endereco"
+#~ msgstr "Endereço"
+
+#~ msgid "Dados do Usuário"
+#~ msgstr "Dados do usuário"
+
+#~ msgid "Senha"
+#~ msgstr "Senha"
+
+#~ msgid "Dados do Plano de acesso"
+#~ msgstr "Dados do Plano de acesso"
+
+#~ msgid "Data da requisicão"
+#~ msgstr "Data da requisição"
+
+#~ msgid "Excluir"
+#~ msgstr "Excluir"
+
+#~ msgid "Aprovar"
+#~ msgstr "Aprovar"
+
+#~ msgid "Não existem organizacoes pendentes"
+#~ msgstr "Não existem organizações pendentes"
+
+#~ msgid "You dont have any plan registered yet!"
+#~ msgstr "Nenhum plano cadastrado"
+
+#~ msgid "Validade (meses)"
+#~ msgstr "Validade (meses)"
+
+#~ msgid ""
+#~ "Please wait until one of our operators to contact you for payment, and "
+#~ "soon your account is enable for use."
+#~ msgstr ""
+#~ "Um de nossos operadores entrará em contato em breve para acertar os "
+#~ "últimos detalhes, como forma de pagamento e, em seguida, sua conta será "
+#~ "ativada para uso."
+
+#~ msgid "Click here to get the billet to test the system payment."
+#~ msgstr ""
+#~ "Clique aqui para gerar um boleto para testar o sistema de pagamento."
+
+#~ msgid "Arquivos de retorno"
+#~ msgstr "Arquivos de retorno"
+
+#~ msgid "retfile Details"
+#~ msgstr "Detalhes do arquivo de retorno"
+
+#~ msgid "You dont have any return file sent yet!"
+#~ msgstr "Nenhum arquivo de retorno enviado ainda."
+
+#~ msgid "Nome do arquivo"
+#~ msgstr "Nome do arquivo"
+
+#~ msgid "Organizacao %s ativada com sucesso"
+#~ msgstr "Organização %s ativada com sucesso"
+
+#~ msgid "Successfully updated."
+#~ msgstr "Atualizado com sucesso."
+
+#~ msgid "Correct the errors bellow."
+#~ msgstr "Corrija os erros abaixo."
+
+#~ msgid "Current invoice"
+#~ msgstr "Fatura atual"
+
+#~ msgid "Field used by the system DON'T change it."
+#~ msgstr "Campo usado pelo sistema, NÃO mexa."
+
+#~ msgid "Email address do not match"
+#~ msgstr "Endereços de e-mails são diferentes."
+
+#~ msgid "Covenant"
+#~ msgstr "Convênio"
+
+#~ msgid "Include client list active"
+#~ msgstr "Lista de Cliente ativo"
+
+#~ msgid "Include client list inactive"
+#~ msgstr "Lista de Cliente inativo"
+
+#~ msgid "Not"
+#~ msgstr "Não"
+
+#~ msgid "Revenues Report"
+#~ msgstr "Relatório de faturamento"
+
+#~ msgid "Services available"
+#~ msgstr "Serviços disponíveis"
+
+#~ msgid "Services selected"
+#~ msgstr "Serviços selecionados"
+
+#~ msgid "Workplace available"
+#~ msgstr "Local de trabalho disponível"
+
+#~ msgid "Workplace selected"
+#~ msgstr "Local de trabalho selecionado"
+
+#~ msgid ""
+#~ "There's no Service created yet. Please, create one before access Client."
+#~ msgstr ""
+#~ "Nenhum \"Serviço\" foi criado até o momento. Por favor, cadastre um "
+#~ "serviço antes de acessar \"Clientes\"."
+
+#~ msgid "Loading"
+#~ msgstr "Carregando"
+
+#~ msgid "Today's schedule"
+#~ msgstr "Agenda de hoje"
+
+#~ msgid "Care Provided Type Selected"
+#~ msgstr "Tipo de serviço prestado selecionado"
+
+#~ msgid "Use History - Under development"
+#~ msgstr "Histórico de uso - Em desenvolvimento"
+
+#~ msgid "Not payed "
+#~ msgstr "Não pago ainda"
+
+#~ msgid "Inscription not done"
+#~ msgstr "Inscrição não realizada"
+
+#~ msgid "Use History"
+#~ msgstr "Histórico de uso"
+
+#~ msgid "Second copy"
+#~ msgstr "Segunda via"
+
+#~ msgid "Last Invoice"
+#~ msgstr "Última fatura"
+
+#~ msgid "Visible for others"
+#~ msgstr "Visível na Rede do GestorPsi"
+
+#~ msgid "Visible?"
+#~ msgstr ""
+#~ "Deixar o cadastro do meu estabelecimento e lista dos profissionais "
+#~ "cadastrados visíveis na área de contatos dos outros estabelecimentos da "
+#~ "rede do GestorPsi."
+
+#~ msgid "Sorry"
+#~ msgstr "Desculpa"
+
+#~ msgid ""
+#~ "Your browser is not compatible with and some functions can not work well"
+#~ msgstr ""
+#~ "Seu navegador não é totalmente compatível com o sistema e algumas "
+#~ "funcionalidades podem não funcionar corretamente."
+
+#~ msgid ""
+#~ "Please, do free download of latest version of your preferred browser."
+#~ msgstr ""
+#~ "Por favor, faça o download gratuito da última versão do seu navegador "
+#~ "preferido."
+
+#~ msgid "Google Chrome"
+#~ msgstr "Google Chrome"
+
+#~ msgid "to get all features running"
+#~ msgstr "para utilizar todos os recursos do GestorPsi"
+
+#~ msgid "continue with restricted features"
+#~ msgstr "continue com restrições"
+
+#~ msgid "Read more"
+#~ msgstr "Saiba mais"
+
+#~ msgid "If you don't have an account, you can"
+#~ msgstr "Se você ainda não possui uma conta, você pode"
+
+#~ msgid "sign up"
+#~ msgstr "cadastrar-se"
+
+#~ msgid "for one"
+#~ msgstr "aqui"
+
+#~ msgid "There is no client subscribed in this professional."
+#~ msgstr "Não há cliente inscrito neste profissional."
+
+#~ msgid "Confirmar exclusão de usuário?"
+#~ msgstr "Confirmar exclusão de usuário?"
+
+#~ msgid "Delete User"
+#~ msgstr "Excluir usuário"
+
+#~ msgid "Sorry, you can not disable yourself"
+#~ msgstr "Desculpe, você não pode desligar você mesmo."
+
+#~ msgid "Confirmation"
+#~ msgstr "Confirmação"
+
+#~ msgid "Username already exists, try another."
+#~ msgstr "Este nome de usuário já existe, tente outro."
+
+#~ msgid "Cannot be removed of this permission because is the only one. ( %s )"
+#~ msgstr "Não pode ser removido dessa permissão porque é o único. ( %s )"
+
+#~ msgid "Select one or more group permission."
+#~ msgstr "Selecione uma permissão ou mais."
+
+#~ msgid "Password confirmation does not match. Please try again"
+#~ msgstr "Senha não confere. Tente novamente."
+
+#~ msgid "User removed successfully"
+#~ msgstr "Usuário removido com sucesso."
+
+#~ msgid "Profession Workplace available"
+#~ msgstr "Local de trabalho disponível"
+
+#~ msgid "Profession Workplace selected"
+#~ msgstr "Local de trabalho selecionado"
+
+#~ msgid "Service available"
+#~ msgstr "Serviço disponível"
+
+#~ msgid "Service selected"
+#~ msgstr "Serviço selecionado"
+
+#~ msgid "Add new"
+#~ msgstr "Adicionar novo"
+
+#~ msgid "Detalhes da Fatura"
+#~ msgstr "Detalhes da Fatura"
+
+#~ msgid ""
+#~ "Para confirmar o pagamento da fatura é preciso preencher tanto o campo "
+#~ "DATA DO PAGAMENTO quanto o campo PAGO"
+#~ msgstr ""
+#~ "Para confirmar o pagamento da fatura é preciso preencher tanto o campo "
+#~ "DATA DO PAGAMENTO quanto o campo PAGO"
+
+#~ msgid "Gerar nova fatura"
+#~ msgstr "Gerar nova fatura"
+
+#~ msgid "Organizações Pendentes"
+#~ msgstr "Organizações Pendentes"
+
+#~ msgid "Organizações"
+#~ msgstr "Organizações"
+
+#~ msgid "Serviços ativos"
+#~ msgstr "Serviços ativos"
+
+#~ msgid "Profissionais ativos"
+#~ msgstr "Profissionais ativos"
+
+#~ msgid "Clientes ativos"
+#~ msgstr "Clientes ativos"
+
+#~ msgid "Site"
+#~ msgstr "Site"
+
+#~ msgid "Editar dados da organização"
+#~ msgstr "Editar dados da organização"
+
+#~ msgid "Administradores desta organização"
+#~ msgstr "Administradores desta organização"
+
+#~ msgid "Não existe administrador para esta organização"
+#~ msgstr "Não existe administrador para esta organização"
+
+#~ msgid ""
+#~ "Profissionais ativos nesta organização, incluindo profissionais-"
+#~ "adminstradores"
+#~ msgstr ""
+#~ "Profissionais ativos nesta organização, incluindo profissionais-"
+#~ "adminstradores"
+
+#~ msgid "Não existe profissionais para esta organização"
+#~ msgstr "Não existem profissionais para esta organização"
+
+#~ msgid "Clique para abrir >>"
+#~ msgstr "Clique para abrir >>"
+
+#~ msgid "Ações para esta organização"
+#~ msgstr "Ações para esta organização"
+
+#~ msgid "Organizacão Ativa"
+#~ msgstr "Organização Ativa"
+
+#~ msgid "Ver/Editar"
+#~ msgstr "Ver/Editar"
+
+#~ msgid "Excluir Cadastro"
+#~ msgstr "Excluir Cadastro"
+
+#~ msgid "Aprovar organização e ativar conta de acesso"
+#~ msgstr "Aprovar organização e ativar conta de acesso"
+
+#~ msgid "Página"
+#~ msgstr "Página"
+
+#~ msgid "de"
+#~ msgstr "de"
+
+#~ msgid "em um total de"
+#~ msgstr "em um total de"
+
+#~ msgid "registros"
+#~ msgstr "registro(s)"
+
+#~ msgid "<< Previous"
+#~ msgstr "Anterior"
+
+#~ msgid "Next >>"
+#~ msgstr "Próximo"
+
+#~ msgid "sem login"
+#~ msgstr "sem login"
+
+#~ msgid "Grupos"
+#~ msgstr "Grupos"
+
+#~ msgid "Email de acesso"
+#~ msgstr "Email de acesso"
+
+#~ msgid "Editar Usuário"
+#~ msgstr "Editar Usuário"
+
+#~ msgid "Editar Pessoa"
+#~ msgstr "Editar Pessoa"
+
+#~ msgid "Editar Perfil Profissional"
+#~ msgstr "Editar Perfil Profissional"
+
+#~ msgid "username"
+#~ msgstr "Nome de Usuário"
+
+#~ msgid "email address"
+#~ msgstr "Endereço de e-mail:"
+
+#~ msgid "password"
+#~ msgstr "Senha"
+
+#~ msgid "password (again)"
+#~ msgstr "Senha (confirmação)"
+
+#~ msgid "This username is already taken. Please choose another."
+#~ msgstr "Esse nome de usuário já existe. Por favor, escolha outro."
+
+#~ msgid "You must type the same password each time"
+#~ msgstr "Você deve digitar a mesma senha escolhida anteriomente."
+
+#~ msgid "I have read and agree to the Terms of Service"
+#~ msgstr "Eu li e concordo com os Termos de Serviço."
+
+#~ msgid ""
+#~ "This email address is already in use. Please supply a different email "
+#~ "address."
+#~ msgstr ""
+#~ "Este endereço de e-mail já está em uso. Por favor, informe outro endereço "
+#~ "de e-mail."
+
+#~ msgid ""
+#~ "Registration using free email addresses is prohibited. Please supply a "
+#~ "different email address."
+#~ msgstr ""
+#~ "Este endereço de e-mail já está em uso. Por favor, informe outro endereço "
+#~ "de e-mail."
+
+#~ msgid "user"
+#~ msgstr "Usuário"
+
+#~ msgid "activation key"
+#~ msgstr "Chave de ativação"
+
+#~ msgid "registration profile"
+#~ msgstr "Cadastro completo"
+
+#~ msgid "registration profiles"
+#~ msgstr "Cadastro completo"
+
+#~ msgid "All admissions"
+#~ msgstr "Admissões"
+
+#~ msgid "Charged"
+#~ msgstr "Ativo"
+
+#~ msgid "Discharged"
+#~ msgstr "Desligamento"
+
+#~ msgid "Discharged Discussed"
+#~ msgstr "Desligamento Discutido"
+
+#~ msgid "Internals"
+#~ msgstr "Internos"
+
+#~ msgid "Externals"
+#~ msgstr "Externos"
+
+#~ msgid "New Message"
+#~ msgstr "Nova mensagem"
+
+#~ msgid "Trash"
+#~ msgstr "Lixeira"
+
+#~ msgid "Firefox"
+#~ msgstr "Firefox"
+
+#~ msgid "Check your email"
+#~ msgstr "Verifique seu e-mail"
+
+#~ msgid ""
+#~ "An activation link has been sent to the email address you supplied, along "
+#~ "with instructions for activating your account."
+#~ msgstr ""
+#~ "Um link de ativação foi enviado ao endereço de e-mail fornecido, "
+#~ "juntamente às instruções para ativação da sua conta."
+
+#~ msgid "lines"
+#~ msgstr "linhas"
+
+#~ msgid "bars"
+#~ msgstr "barras"
+
+#~ msgid "points"
+#~ msgstr "pontos"
+
+#~ msgid "close"
+#~ msgstr "Fechado"
+
+#~ msgid "Service Relations"
+#~ msgstr "Convênios e Profissionais"
+
+#~ msgid "Socio-economic Data"
+#~ msgstr "Dados Socioeconômicos"
+
+#~ msgid "Transportation"
+#~ msgstr "Transporte"
+
+#~ msgid "Manage User"
+#~ msgstr "Gerenciar usuário"
+
+#~ msgid "Create User"
+#~ msgstr "Criar usuário"
+
+#~ msgid ""
+#~ "Impossible discharged of the service. Exist referral to this professional."
+#~ msgstr ""
+#~ "Impossível desligar do serviço. Existe inscrição para este profissional."
+
+#~ msgid "Choosen occurence already in use by another demand."
+#~ msgstr "A ocorrência escolhida já está sendo usada por outra demanda."
+
+#~ msgid "There's been an error in demand form."
+#~ msgstr "Há um erro no formulário do \"Problema\"."
+
+#~ msgid "Demand saved successfully"
+#~ msgstr "Problema salvo com sucesso."
+
+#~ msgid "You cannot change a confirmed diagnosis."
+#~ msgstr "Você não pode modificar um diagnóstico confirmado."
+
+#~ msgid "Choosen occurence already in use by another diagnosis."
+#~ msgstr ""
+#~ "A ocorrência escolhida já está sendo utilizada em outro diagnóstico."
+
+#~ msgid "There's been an error in diagnosis form."
+#~ msgstr "Houve um erro no formulário de \"Diagnóstico\"."
+
+#~ msgid "Diagnosis saved successfully"
+#~ msgstr "Diagnóstico salvo com sucesso."
+
+#~ msgid "You cannot change a confirmed session."
+#~ msgstr "Você não pode modificar um atendimento confirmado."
+
+#~ msgid "Choosen occurence already in use by another session."
+#~ msgstr "Ocorrência escolhida já está sendo utilizada em outro atendimento."
+
+#~ msgid "There's been an error in session form."
+#~ msgstr "Houve um erro no formulário do \"Atendimento\"."
+
+#~ msgid "Session saved successfully"
+#~ msgstr "Atendimento salvo com sucesso"
+
+#~ msgid "times by"
+#~ msgstr "vezes por"
+
+#~ msgid "Add new session"
+#~ msgstr "Adicionar atendimento"
+
+#~ msgid "Abandonment of service "
+#~ msgstr "Abandono do Serviço"
+
+#~ msgid "Withdrawal of service - Tried the other type of treatment"
+#~ msgstr "Desistência do serviço - Procurou outro tipo de tratamento "
+
+#~ msgid "Withdrawal of service - The shutdown was reported by the "
+#~ msgstr ""
+#~ "Desistência do serviço - O desligamento foi comunicado pelo cliente ou "
+#~ "por terceiros "
+
+#~ msgid "Withdrawal of service - The incompatibility of schedule "
+#~ msgstr "Desistência do serviço - Incompatibilidade de horários"
+
+#~ msgid "Unable to contact the customer"
+#~ msgstr "Impossibilidade de contato com o cliente"
+
+#~ msgid "Abandonment / withdrawal from the (a) professional"
+#~ msgstr "Abandono / desistência por parte do(a) profissional "
+
+#~ msgid "High * (end of the process without the professional)"
+#~ msgstr "Alta (término do processo com consentimento profissional) "
+
+#~ msgid "Referral to external continuity of treatment "
+#~ msgstr "Encaminhamento externo para continuidade do tratamento "
+
+#~ msgid "Death of the professional "
+#~ msgstr "Falecimento do profissional "
+
+#~ msgid "Default/Neglect"
+#~ msgstr "Inadimplência "
+
+#~ msgid "Change of city/address "
+#~ msgstr "Mudança de cidade / endereço "
+
+#~ msgid "Do not attended the first consultation"
+#~ msgstr "Não compareceu ao primeiro atendimento "
+
+#~ msgid "End stage - the case was closed"
+#~ msgstr "Término do estágio - O processo foi encerrado "
+
+#~ msgid "Treatment / Service terminated by court order"
+#~ msgstr "Tratamento / Serviço encerrado por ordem judicial "
+
+#~ msgid "Internal referral"
+#~ msgstr "Encaminhamento interno"
+
+#~ msgid "admission-report"
+#~ msgstr "Relatório de Admissão"
+
+#~ msgid "Statement of Service"
+#~ msgstr "Detalhes da Inscrição"
+
+#~ msgid "Save Draft"
+#~ msgstr "Salvar rascunho"
+
+#~ msgid "Date out"
+#~ msgstr "Data de Término"
+
+#~ msgid "Remove"
+#~ msgstr "Excluir"
+
+#~ msgid "Organization Admissions between"
+#~ msgstr "Admissões do Estabelecimento entre"
+
+#~ msgid "client names will not displayed due to access privacy restrictions"
+#~ msgstr "Os nomes dos clientes não serão exibidos por questão de sigilo."
+
+#~ msgid "Admissions data reports"
+#~ msgstr "Dados de Admissão"
+
+#~ msgid "Demographic data reports"
+#~ msgstr "Relatórios de dados demográficos"
+>>>>>>> 5a35666... Refactoring translations language in admission form and organization signature templates
 
 #: templates/registration/registration_complete.html:9
 msgid "Click here to start using"

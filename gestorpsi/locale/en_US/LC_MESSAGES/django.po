@@ -8,7 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2015-12-01 17:19-0200\n"
+=======
+"POT-Creation-Date: 2017-04-02 12:38-0300\n"
+>>>>>>> 5a35666... Refactoring translations language in admission form and organization signature templates
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +30,6 @@ msgid "English"
 msgstr ""
 
 #: admission/models.py:27 referral/models.py:68
-#: templates/admission/admission_form.html:157
 msgid "Termo de Consentimento Livre e Esclarecido (TCLE)"
 msgstr ""
 
@@ -1531,6 +1534,9 @@ msgstr ""
 
 #: gcm/models/invoice.py:67
 #: templates/organization/organization_signature.html:50
+#: templates/organization/organization_signature.html:128
+#: templates/organization/organization_signature.html:189
+#: templates/organization/organization_signature.html:251
 #: templates/tags/invoice.html:57
 msgid "Plan"
 msgstr ""
@@ -3137,6 +3143,10 @@ msgstr ""
 #: templates/client/client_print.html:120
 msgid "Signed by the client"
 msgstr ""
+
+#: templates/admission/admission_form.html:157
+msgid "Free Informed Consent Term"
+msgstr "Termo de Consentimento Livre e Esclarecido (TCLE)"
 
 #: templates/admission/admission_form.html:182
 msgid "Media"
@@ -5247,6 +5257,9 @@ msgid "Sent"
 msgstr ""
 
 #: templates/messages/outbox.html:24 templates/messages/trash.html:24
+#: templates/organization/organization_signature.html:131
+#: templates/organization/organization_signature.html:192
+#: templates/organization/organization_signature.html:254
 msgid "Action"
 msgstr ""
 
@@ -5534,11 +5547,53 @@ msgid ""
 msgstr ""
 
 #: templates/organization/organization_signature.html:69
+<<<<<<< HEAD
 msgid "Forma de pagamento"
 msgstr ""
 
 #: templates/organization/organization_signature.html:120
 msgid "Hist&oacute;rico das faturas e pagamentos"
+=======
+msgid "Payment methods"
+msgstr "Métodos de pagamento"
+
+#: templates/organization/organization_signature.html:90
+msgid "To change your form of payment or any question"
+msgstr "Para mudar sua forma de pagamento ou qualquer pergunta,"
+
+#: templates/organization/organization_signature.html:90
+msgid "contact"
+msgstr "entre em contato"
+
+#: templates/organization/organization_signature.html:120
+msgid "Invoice and payment history"
+msgstr "Histórico de faturas e pagamentos"
+
+#: templates/organization/organization_signature.html:125
+msgid "Next signature"
+msgstr ""
+
+#: templates/organization/organization_signature.html:129
+#: templates/organization/organization_signature.html:190
+#: templates/organization/organization_signature.html:252
+msgid "Start"
+msgstr "Início"
+
+#: templates/organization/organization_signature.html:130
+#: templates/organization/organization_signature.html:191
+#: templates/organization/organization_signature.html:253
+msgid "Maturity"
+msgstr "Maturidade"
+
+#: templates/organization/organization_signature.html:174
+#: templates/organization/organization_signature.html:235
+#: templates/organization/organization_signature.html:297
+msgid "Paid in"
+msgstr ""
+
+#: templates/organization/organization_signature.html:248
+msgid "Signature expired"
+>>>>>>> 5a35666... Refactoring translations language in admission form and organization signature templates
 msgstr ""
 
 #: templates/organization/organization_signature_suspension.html:41
