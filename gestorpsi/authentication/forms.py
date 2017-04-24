@@ -36,16 +36,16 @@ from gestorpsi.address.models import State, City, Address, AddressType
 
 from gestorpsi.document.models import TypeDocument, Document
 
-attrs_dict = {'class': 'required'}
+attrs_dict = {'class': 'required', 'required': 'true'}
 
 class AuthenticationRegistrationForm(RegistrationRegistrationForm):
-    name = forms.CharField(label=_('Name'), help_text=_('Responsible professional name'))
-    email = forms.EmailField(label=_('Email'), help_text=_('Your email address'))
+    name = forms.CharField(label=_('Name'), help_text=_('Responsible professional name'), widget=forms.TextInput(attrs={'required': 'true'}))
+    email = forms.EmailField(label=_('Email'), help_text=_('Your email address'), widget=forms.TextInput(attrs={'required': 'true'}))
     password1 = forms.CharField(widget=forms.PasswordInput(attrs=attrs_dict, render_value=False), label=_('Password'), help_text=_('Choice one password'))
     password2 = forms.CharField(widget=forms.PasswordInput(attrs=attrs_dict, render_value=False), label=_('Password (again)'), help_text=_('Type password again'))
-    username = forms.CharField(label=_('Username'), help_text=_('Choice one unique identifier'))
-    organization = forms.CharField(label=_('Organization'), help_text=_('Name of your organization'))
-    shortname = forms.CharField(label=_('Short Name'), help_text=_('Shortname of your organization'))
+    username = forms.CharField(label=_('Username'), help_text=_('Choice one unique identifier'), widget=forms.TextInput(attrs={'style':'width:670px;','required': 'true'}))
+    organization = forms.CharField(label=_('Organization'), help_text=_('Name of your organization'), widget=forms.TextInput(attrs={'required': 'true'}))
+    shortname = forms.CharField(label=_('Short Name'), help_text=_('Shortname of your organization'), widget=forms.TextInput(attrs={'required': 'true'}))
 
     def save(self, send_email=True):
         user = RegistrationProfile.objects.create_inactive_user(username=self.cleaned_data['username'],
@@ -114,14 +114,15 @@ class AuthenticationRegistrationForm(RegistrationRegistrationForm):
 """
 class RegistrationForm(AuthenticationRegistrationForm):
 
-    plan = forms.ModelChoiceField(label=_('Access Plan'), help_text=_('Choice one access plan'), queryset=Plan.objects.filter(active=True), widget=forms.Select(attrs={'style':'width:265px;'}))
-    phone = forms.CharField(max_length=15, label=_('Phone Number'), help_text=_('Enter your phone number with area code here'), widget=forms.TextInput(attrs={'mask':'(99) 9999-9999?9',}))
-    cpf = fields.CPFField(label=_('CPF Number'), help_text=_('Enter your CPF number here'), widget=forms.TextInput(attrs={'mask':'999.999.999-99',}))
-    address = forms.CharField(max_length=255, label=_('Address Street'), help_text=_('Enter your address here'))
-    address_number = forms.CharField(max_length=30, label=_('Address Number'), help_text=_('Enter your address number here'))
-    zipcode = forms.CharField(max_length=30, label=_('ZIP Code'), help_text=_('Enter your ZIP Code here'), widget=forms.TextInput(attrs={'mask':'99999-999'}))
-    state = forms.ModelChoiceField(label=_('State'), help_text=_('Enter your state here'), queryset=State.objects.all(), widget=forms.Select(attrs={'style':'width:265px;', 'class':'city_search'}))
-    city = forms.ModelChoiceField(label=_('City'), help_text=_('Enter your city here'), queryset=City.objects.all(), widget=forms.Select(attrs={'style':'width:265px;'}))
+
+    plan = forms.ModelChoiceField(label=_('Access Plan'), help_text=_('Choice one access plan'), queryset=Plan.objects.filter(active=True), widget=forms.Select(attrs={'style':'width:339px;', 'required': 'true'}))
+    phone = forms.CharField(max_length=15, label=_('Phone Number'), help_text=_('Enter your phone number with area code here'), widget=forms.TextInput(attrs={'mask':'(99) 9999-9999?9', 'required': 'true'}))
+    cpf = fields.CPFField(label=_('CPF Number'), help_text=_('Enter your CPF number here'), widget=forms.TextInput(attrs={'mask':'999.999.999-99', 'required': 'true'}))
+    address = forms.CharField(max_length=255, label=_('Address Street'), help_text=_('Enter your address here'), widget=forms.TextInput(attrs={'required': 'true'}))
+    address_number = forms.CharField(max_length=30, label=_('Address Number'), help_text=_('Enter your address number here'), widget=forms.TextInput(attrs={'required': 'true'}))
+    zipcode = forms.CharField(max_length=30, label=_('ZIP Code'), help_text=_('Enter your ZIP Code here'), widget=forms.TextInput(attrs={'mask':'99999-999', 'required': 'true'}))
+    state = forms.ModelChoiceField(label=_('State'), help_text=_('Enter your state here'), queryset=State.objects.all(), widget=forms.Select(attrs={'style':'width:339px;', 'class':'city_search', 'required': 'true'}))
+    city = forms.ModelChoiceField(label=_('City'), help_text=_('Enter your city here'), queryset=City.objects.all(), widget=forms.Select(attrs={'style':'width:339px;', 'required': 'true'}))
 
     def save(self, request, *args, **kwargs):
         organization = super(RegistrationForm, self).save(False, *args, **kwargs)  # send_email = False
