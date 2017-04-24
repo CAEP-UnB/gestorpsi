@@ -389,6 +389,10 @@ class Organization(models.Model):
     def services(self):
         return self.service_set.filter(active=True)
 
+    def activate(self):
+        self.active = True
+        self.save()
+
     '''
     return number of rooms from org
     '''

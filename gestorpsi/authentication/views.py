@@ -187,7 +187,6 @@ def register(request, success_url=None,
              form_class=RegistrationForm,
              template_name='registration/registration_form.html',
              extra_context=None):
-    
     if request.method == 'POST': #the full process of registration is done here
 
         form = form_class(data=request.POST)
@@ -214,7 +213,7 @@ def register(request, success_url=None,
 
                 org = Organization.objects.filter(organization__isnull=True).filter(person=person)[0]
 
-                activate_organization(org)
+                org.activate()
 
                 activate_each_registered_profile (org)
 
@@ -222,7 +221,6 @@ def register(request, success_url=None,
 
                 organzation_invoice = Invoice()
                 save_organization_invoice(organzation_invoice,org)
-                
                 bcc_list = ADMINS_REGISTRATION
 
                 send_email_message_new_signature(bcc_list, org)
@@ -235,7 +233,7 @@ def register(request, success_url=None,
 
     else:
         form = form_class()
-    
+
     if extra_context is None:
         extra_context = {}
     context = RequestContext(request)
@@ -246,10 +244,6 @@ def register(request, success_url=None,
                 { 'form': form },
                 context_instance=RequestContext(request)
             )
-
-def activate_organization(org):
-    org.active = True   
-    org.save()
 
 def message_for_client(organzation_invoice, request, bcc_list):
     user = User.objects.get(id=request.session['user_aux_id'])

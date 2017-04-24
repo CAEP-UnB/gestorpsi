@@ -24,43 +24,7 @@ from .models import Profile, Role
 
 from django.test import TestCase, Client, RequestFactory
 from django.core.urlresolvers import reverse
-from gestorpsi.util.test_utils import setup_required_data
-
-user_stub = {
-    "address": u'niceaddress',
-    "address_number": u'244',
-    "city": u'1',
-    "cpf": u'741.095.117-63',
-    "email": u'user15555@gmail.com',
-    "name": u'user15555',
-    "organization": u'niceorg',
-    "password1": u'nicepass123',
-    "password2": u'nicepass123',
-    "phone": u'(55) 5432-4321',
-    "plan": u'1',
-    "shortname": u'NICE',
-    "state": u'1',
-    "username": u'user15',
-    "zipcode": u'12312-123',
-}
-
-bad_user_stub = {
-    "address": u'niceaddress',
-    "address_number": u'244',
-    "city": u'1',
-    "cpf": u'741.095.117-63',
-    "email": u'user15555@gmail.com',
-    "name": u'user15555',
-    "organization": u'niceorg',
-    "password1": u'nicepass123',
-    "password2": u'nicepass1', # different pass
-    "phone": u'(55) 5432-4321',
-    "plan": u'1',
-    "shortname": u'NICE',
-    "state": u'1',
-    "username": u'user15',
-    "zipcode": u'12312-123',
-}
+from gestorpsi.util.test_utils import setup_required_data, bad_user_stub, user_stub
 
 class SignupTests(TestCase):
     def setUp(self):
@@ -74,12 +38,12 @@ class SignupTests(TestCase):
 
     def test_signup_shouldnt_work_for_wrong_values(self):
         old_user_count = User.objects.count()
-        response = self.client.post(reverse('registration-register'), bad_user_stub)
+        response = self.client.post(reverse('registration-register'), bad_user_stub())
         self.assertEqual(User.objects.count(), old_user_count)
 
     def test_signup_with_correct_data_should_increase_total_number_of_users(self):
         old_user_count = User.objects.count()
-        response = self.client.post(reverse('registration-register'), user_stub)
+        response = self.client.post(reverse('registration-register'), user_stub())
         self.assertEqual(User.objects.count(), old_user_count+1)
 
 class SigninTests(TestCase):
@@ -93,13 +57,13 @@ class SigninTests(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_login_should_signin_registered_users(self):
-        self.client.post(reverse('registration-register'), user_stub)
-        user = User.objects.get(username=user_stub["username"])
+        self.client.post(reverse('registration-register'), user_stub())
+        user = User.objects.get(username=user_stub()["username"])
         self.client.logout()
         self.assertEqual(self.client.session, {})
         response = self.client.post(reverse('login'), {
-            "username": user_stub["username"],
-            "password": user_stub["password1"],
+            "username": user_stub()["username"],
+            "password": user_stub()["password1"],
             "next": "/"
         })
         self.assertIsNot(self.client.session, {})
