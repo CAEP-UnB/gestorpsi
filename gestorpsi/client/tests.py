@@ -27,6 +27,7 @@ class ClientModelTest(unittest.TestCase):
         #organization = Organization(name='Organizacao Teste',short_name='OT')
         person = Person()
         person.name = 'Levi Moraes'
+        person.nickname = 'Apelido'
         person.id = 01
         person.active = True
 
@@ -49,8 +50,8 @@ class ClientModelTest(unittest.TestCase):
     def testIsNotActive(self):
         pass
 
-    def testListItemTitle(self):
-        self.assertEqual(self.client.list_item_title(), 'Levi Moraes')
+    def testListItemSubTitle(self):
+        self.assertEqual(self.client.list_item_subtitle(), 'Apelido')
 
     def testIsActive(self):
         self.assertEqual(self.client.is_active(),True)

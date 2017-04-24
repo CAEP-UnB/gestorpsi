@@ -84,7 +84,9 @@ GNU General Public License for more details.
     {% for i in object_list %}
     <tr class="zebra_{% cycle 0,1 %}">
         <td class="title">
-            <a href="{{ i.list_item_url }}" title="{{ i.list_item_title }}">{{ i.list_item_title }}</a>
+            <a href="{{ i.list_item_url }}" title="{{ i.list_item_title }}">
+                {{i.list_item_subtitle}}
+            </a>
             <span style="font-weight:normal;">{% if i.list_item_title_aditional %}({{ i.list_item_title_aditional }}){% endif %}</span><br><i>{{ i.list_item_description }}</i>
         </td>
         <td>

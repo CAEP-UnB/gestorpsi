@@ -5367,7 +5367,7 @@ msgid "Personal Identification"
 msgstr ""
 
 #: templates/meta/people_indentification.html:40
-msgid "Nickname"
+msgid "Promptuary"
 msgstr ""
 
 #: templates/meta/people_profile.html:28

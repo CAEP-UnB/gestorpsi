@@ -248,12 +248,12 @@ def list(request, page=1, initial=None, filter=None, no_paging=False, deactive=F
         if ord(initial) > 65:
             initial_prev = chr(ord(initial) - 1)
 
-        object_list = object_list.filter(person__name__istartswith = initial)
+        object_list = objects.list_filter(person__nickname__istartswith = initial)
         url_extra += '&initial=%s' % initial
 
     if request.GET.get('search'):
         search = request.GET.get('search')
-        object_list = object_list.filter(person__name__icontains = search)
+        object_list = object_list.filter(person__nickname__icontains = search)
         url_extra += '&search=%s' % search
 
     # filters

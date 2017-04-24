@@ -379,8 +379,8 @@ class Client(models.Model):
         self.active = False
         self.save()
 
-    def list_item_title(self):
-        return u"%s" % (self.person.name)
+    def list_item_subtitle(self):
+        return u"%s" % (self.person.nickname)
 
     def list_item_url(self):
         return "/client/%s/home/" % (self.pk)

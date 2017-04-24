@@ -37,7 +37,7 @@ People Personal Identification Form
                 <label>{% trans "Name" %}<br />
                 <input type="text" name="name" maxlength="50" class="big tabtitle" value="{{ object.person.name }}" />
                 </label>
-                <label>{% trans "Nickname" %}<br />
+                <label>{% trans "Promptuary" %}<br />
                 <input type="text" name="nickname" maxlength="50"  class="big" value="{% ifnotequal object.person.nickname None %}{{ object.person.nickname }}{% endifnotequal %}" id="id_nickname" />
                 </label>
 </fieldset>
